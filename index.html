@@ -6,59 +6,173 @@
   <title>Menú - PhotoMarket</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fffaf7;
-      text-align: center;
+      background-color: #f9f9f9;
+      color: #333;
     }
     header {
-      background-color: #f5d5d5;
-      padding: 20px;
+      background: linear-gradient(135deg, #4a90e2 0%, #50c9c3 100%);
+      padding: 40px 15px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 0 0 25px 25px;
     }
     header h1 {
       margin: 0;
-      font-size: 24px;
-      color: #5a2e2e;
+      font-size: clamp(28px, 8vw, 42px);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      word-wrap: break-word;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #f0f0f0;
     }
     .menu-container {
-      margin: 20px;
+      margin: 30px auto;
+      max-width: 900px;
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      text-align: center;
     }
-    iframe {
-      width: 90%;
-      height: 600px;
-      border: none;
+    .menu-container img {
+      width: 100%;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border: 6px solid #4a90e2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .menu-container img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
     }
     .whatsapp-btn {
       display: inline-block;
-      margin: 30px auto;
-      padding: 15px 25px;
-      background-color: #25D366;
+      margin: 40px auto;
+      padding: 16px 28px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
       color: white;
       font-size: 18px;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: background 0.3s;
+      border-radius: 50px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
     .whatsapp-btn:hover {
+      background: linear-gradient(135deg, #20bd5a, #0e6c5d);
+      transform: scale(1.05);
+    }
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
       background-color: #1da851;
+    }
+    /* Botón volver arriba */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-to-top.show {
+      display: flex;
+    }
+    footer {
+      background-color: #4a90e2;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: white;
+      margin-top: 40px;
+      border-radius: 25px 25px 0 0;
+    }
+    footer iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>PhotoMarket</h1>
-    <p>Consulta nuestra carta y reserva tu mesa</p>
+    <p>Consulta nuestra carta y haz tu reserva</p>
   </header>
 
   <div class="menu-container">
-    <iframe src="https://drive.google.com/file/d/1YAyBhb38bse9RaRQcYvEV0VelBAxb2Vz/preview" allow="autoplay"></iframe>
+    <img src="menu.jpg" alt="Menú PhotoMarket">
   </div>
 
-  <a class="whatsapp-btn" href="https://wa.me/5492612636244?text=Hola!%20Quiero%20reservar%20una%20promo" target="_blank">📲 Reservar por WhatsApp</a>
+  <div style="text-align:center;">
+    <a class="whatsapp-btn" href="https://wa.me/5492612636244?text=Hola!%20Quiero%20reservar%20una%20promo" target="_blank">📲 Reservar por WhatsApp</a>
+  </div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/5492612636244?text=Hola!%20Quiero%20reservar%20una%20promo" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- Botón volver arriba -->
+  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">⬆️</button>
+
+  <footer>
+    <p>© 2025 PhotoMarket - Todos los derechos reservados</p>
+    <!-- Mapa de Google Maps: ubicación corregida -->
+    <iframe src="https://www.google.com/maps?q=-32.8995873,-68.8422524&z=17&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </footer>
+
+  <script>
+    // Mostrar el botón volver arriba al hacer scroll
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  </script>
 </body>
 </html>

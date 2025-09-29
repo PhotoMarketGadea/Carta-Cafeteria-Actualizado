@@ -6,240 +6,175 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú - PhotoMarket</title>
   <style>
-    /* Estilos globales */
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
-      color: #333;
-      line-height: 1.6;
+      background-color: #fdf6f0; /* Beige claro */
+      color: #4a3f35; /* Marrón suave */
     }
-
-```
-header {
-  background: #ffffff;
-  padding: 30px 15px;
-  text-align: center;
-  border-bottom: 2px solid #eaeaea;
-}
-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #4a90e2;
-}
-header p {
-  margin-top: 6px;
-  font-size: 1rem;
-  color: #666;
-}
-
-/* Contenedor principal */
-.menu-container {
-  margin: 30px auto;
-  max-width: 950px;
-  padding: 0 15px;
-}
-
-/* Secciones */
-.menu-section {
-  margin-bottom: 40px;
-}
-.menu-section h2 {
-  font-size: 1.5rem;
-  color: #4a90e2;
-  margin-bottom: 15px;
-  text-align: left;
-  border-left: 4px solid #4a90e2;
-  padding-left: 10px;
-}
-
-/* Tarjetas de items */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
-}
-.menu-item {
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.menu-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-}
-.menu-item h3 {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #333;
-}
-.menu-item p {
-  margin: 4px 0 0;
-  font-size: 0.9rem;
-  color: #666;
-}
-.menu-item .price {
-  display: block;
-  margin-top: 6px;
-  font-weight: 600;
-  color: #4a90e2;
-}
-
-/* Botón WhatsApp */
-.whatsapp-btn {
-  display: inline-block;
-  margin: 30px auto;
-  padding: 14px 26px;
-  background: #25D366;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-.whatsapp-btn:hover {
-  background: #1da851;
-  transform: scale(1.05);
-}
-
-/* Botón flotante WhatsApp */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  z-index: 100;
-  transition: transform 0.3s ease;
-}
-.whatsapp-float img {
-  width: 35px;
-  height: 35px;
-}
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-
-/* Footer */
-footer {
-  background: #f5f5f5;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: #666;
-  margin-top: 40px;
-}
-footer iframe {
-  width: 100%;
-  height: 220px;
-  border: none;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-```
-
+    header {
+      background: #4a3f35; /* Marrón */
+      padding: 40px 15px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 0 0 25px 25px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: clamp(28px, 8vw, 42px);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #e6e0da;
+    }
+    .menu-container {
+      margin: 30px auto;
+      max-width: 900px;
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .menu-container img {
+      width: 100%;
+      border-radius: 12px;
+      border: 6px solid #7bb661; /* Verde de la carta */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .menu-container img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      margin: 40px auto;
+      padding: 16px 28px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background: linear-gradient(135deg, #20bd5a, #0e6c5d);
+      transform: scale(1.05);
+    }
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1da851;
+    }
+    /* Botón volver arriba */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #7bb661; /* Verde */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-to-top.show {
+      display: flex;
+    }
+    footer {
+      background-color: #4a3f35;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: white;
+      margin-top: 40px;
+      border-radius: 25px 25px 0 0;
+    }
+    footer iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>PhotoMarket</h1>
-    <p>Cafetería & Panadería - Consulta nuestra carta</p>
+    <p>Consulta nuestra carta y haz tu reserva</p>
   </header>
 
   <div class="menu-container">
-
-```
-<!-- PROMOS -->
-<div class="menu-section">
-  <h2>Promos</h2>
-  <div class="menu-grid">
-    <div class="menu-item"><h3>Café mediano + 1 torta</h3><span class="price">$3200</span></div>
-    <div class="menu-item"><h3>Café mediano + 1 factura</h3><span class="price">$3300</span></div>
-    <div class="menu-item"><h3>Café mediano + tostada con palta y huevo</h3><span class="price">$5400</span></div>
-    <div class="menu-item"><h3>Café grande + 2 tortas o facturas + jugo chico</h3><span class="price">$5800</span></div>
-    <div class="menu-item"><h3>Café grande + 2 tostadas con palta y huevo</h3><span class="price">$8000</span></div>
-    <div class="menu-item"><h3>Café grande + tostado + jugo chico</h3><span class="price">$6700</span></div>
-  </div>
-</div>
-
-<!-- BEBIDAS -->
-<div class="menu-section">
-  <h2>Bebidas</h2>
-  <div class="menu-grid">
-    <div class="menu-item"><h3>Café grande</h3><span class="price">$3500</span></div>
-    <div class="menu-item"><h3>Café mediano</h3><span class="price">$2700</span></div>
-    <div class="menu-item"><h3>Capuchino</h3><span class="price">$3800</span></div>
-    <div class="menu-item"><h3>Submarino</h3><span class="price">$3800</span></div>
-    <div class="menu-item"><h3>Té</h3><span class="price">$2000</span></div>
-    <div class="menu-item"><h3>Chocolate</h3><span class="price">$3800</span></div>
-    <div class="menu-item"><h3>Licuado</h3><span class="price">$4500</span></div>
-    <div class="menu-item"><h3>Vaso de jugo</h3><span class="price">$4000</span></div>
-    <div class="menu-item"><h3>Yogur griego</h3><span class="price">$3500</span></div>
-  </div>
-</div>
-
-<!-- PANIFICADO -->
-<div class="menu-section">
-  <h2>Panificado</h2>
-  <div class="menu-grid">
-    <div class="menu-item"><h3>Torta</h3><span class="price">$500</span></div>
-    <div class="menu-item"><h3>Factura</h3><span class="price">$600</span></div>
-    <div class="menu-item"><h3>Pastelito</h3><span class="price">$800</span></div>
-    <div class="menu-item"><h3>Alfajor maicena/miel</h3><span class="price">$800</span></div>
-    <div class="menu-item"><h3>Tarta de coco</h3><span class="price">$800</span></div>
-    <div class="menu-item"><h3>Pasta frola</h3><span class="price">$800</span></div>
-    <div class="menu-item"><h3>Hojaldre con dulce de leche</h3><span class="price">$800</span></div>
-    <div class="menu-item"><h3>Budín de limón sin gluten</h3><span class="price">$1600</span></div>
-    <div class="menu-item"><h3>Brownie</h3><span class="price">$1800</span></div>
-  </div>
-</div>
-
-<!-- ALMUERZO -->
-<div class="menu-section">
-  <h2>Almuerzo</h2>
-  <div class="menu-grid">
-    <div class="menu-item"><h3>Pizza muzzarella (8 porciones)</h3><span class="price">$7500</span></div>
-    <div class="menu-item"><h3>Pizza con jamón (8 porciones)</h3><span class="price">$8500</span></div>
-    <div class="menu-item"><h3>Pizzeta muzzarella (4 porciones)</h3><span class="price">$3800</span></div>
-    <div class="menu-item"><h3>Pizzeta con jamón (4 porciones)</h3><span class="price">$4200</span></div>
-    <div class="menu-item"><h3>Sándwich de milanesa</h3><span class="price">$6500</span></div>
-    <div class="menu-item"><h3>Pancho</h3><span class="price">$2500</span></div>
-    <div class="menu-item"><h3>Tarta</h3><span class="price">$3500</span></div>
-    <div class="menu-item"><h3>Ensalada</h3><span class="price">$2900</span></div>
-    <div class="menu-item"><h3>Tostado</h3><span class="price">$4500</span></div>
-    <div class="menu-item"><h3>Empanada</h3><span class="price">$800</span></div>
-  </div>
-</div>
-
-<div style="text-align:center;">
-  <a class="whatsapp-btn" href="https://wa.me/5492612636244?text=Hola!%20Quiero%20reservar%20una%20promo" target="_blank">📲 Reservar por WhatsApp</a>
-</div>
-```
-
+    <img src="menu.jpg" alt="Menú PhotoMarket">
   </div>
 
-  <!-- Botón flotante WhatsApp -->
+  <div style="text-align:center;">
+    <a class="whatsapp-btn" href="https://wa.me/5492612636244?text=Hola!%20Quiero%20reservar%20una%20promo" target="_blank">📲 Reservar por WhatsApp</a>
+  </div>
+
+  <!-- Botón flotante de WhatsApp -->
 
   <a href="https://wa.me/5492612636244?text=Hola!%20Quiero%20reservar%20una%20promo" class="whatsapp-float" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
+  <!-- Botón volver arriba -->
+
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">⬆️</button>
+
   <footer>
     <p>© 2025 PhotoMarket - Todos los derechos reservados</p>
+    <!-- Mapa de Google Maps: ubicación corregida -->
     <iframe src="https://www.google.com/maps?q=-32.8995873,-68.8422524&z=17&output=embed" allowfullscreen="" loading="lazy"></iframe>
   </footer>
+
+  <script>
+    // Mostrar el botón volver arriba al hacer scroll
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  </script>
+
 </body>
 </html>

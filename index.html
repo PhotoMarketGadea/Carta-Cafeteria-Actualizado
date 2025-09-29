@@ -10,134 +10,138 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        #fdf6f0,
-        #fdf6f0 40px,
-        #f9ede6 40px,
-        #f9ede6 80px
-      ); /* Fondo pastel con diseño */
-      color: #5c443c; /* Marrón pastel */
+      background: linear-gradient(135deg, #fdf6f0, #fbeee6);
+      color: #4b3a2f;
+      background-attachment: fixed;
     }
-    header {
-      background: #8d6e63; /* Marrón pastel */
-      padding: 40px 15px;
-      text-align: center;
-      color: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      border-radius: 0 0 25px 25px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: clamp(28px, 8vw, 42px);
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #f0eae8;
-    }
-    .menu-container {
-      margin: 30px auto;
-      max-width: 900px;
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .menu-container img {
-      width: 100%;
-      border-radius: 12px;
-      border: 6px solid #7bb661; /* Verde de la carta */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .menu-container img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-    }
-    .whatsapp-btn {
-      display: inline-block;
-      margin: 40px auto;
-      padding: 16px 28px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    }
-    .whatsapp-btn:hover {
-      background: linear-gradient(135deg, #20bd5a, #0e6c5d);
-      transform: scale(1.05);
-    }
-    /* Botón flotante WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      border-radius: 50%;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease;
-    }
-    .whatsapp-float img {
-      width: 35px;
-      height: 35px;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #1da851;
-    }
-    /* Botón volver arriba */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #7bb661; /* Verde */
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      display: none;
-      align-items: center;
-      justify-content: center;
-    }
-    .back-to-top.show {
-      display: flex;
-    }
-    footer {
-      background-color: #8d6e63;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: white;
-      margin-top: 40px;
-      border-radius: 25px 25px 0 0;
-    }
-    footer iframe {
-      width: 100%;
-      height: 250px;
-      border: none;
-      border-radius: 12px;
-      margin-top: 15px;
-    }
+
+```
+header {
+  background: linear-gradient(135deg, #d4a373, #eec9b7);
+  padding: 40px 15px;
+  text-align: center;
+  color: #fffdf8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 0 0 25px 25px;
+}
+header h1 {
+  margin: 0;
+  font-size: clamp(28px, 8vw, 42px);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+header p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fffaf3;
+}
+
+.menu-container {
+  margin: 30px auto;
+  max-width: 900px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.menu-container img {
+  width: 100%;
+  border-radius: 14px;
+  border: 4px solid #eec9b7;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  margin: 40px auto;
+  padding: 16px 28px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #20bd5a, #0e6c5d);
+  transform: scale(1.05);
+}
+
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1da851;
+}
+
+/* Botón volver arriba */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #d4a373;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.back-to-top.show {
+  display: flex;
+}
+
+footer {
+  background-color: #d4a373;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: white;
+  margin-top: 40px;
+  border-radius: 25px 25px 0 0;
+}
+footer iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+```
+
   </style>
 </head>
 <body>
@@ -166,7 +170,6 @@
 
   <footer>
     <p>© 2025 PhotoMarket - Todos los derechos reservados</p>
-    <!-- Mapa de Google Maps: ubicación corregida -->
     <iframe src="https://www.google.com/maps?q=-32.8995873,-68.8422524&z=17&output=embed" allowfullscreen="" loading="lazy"></iframe>
   </footer>
 

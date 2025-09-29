@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -10,157 +9,130 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #faf8f6;
-      color: #3d2e22;
-      overflow-x: hidden;
+      background-color: #f9f9f9;
+      color: #333;
     }
-
-```
-header {
-  background: #d4a373;
-  padding: 50px 20px;
-  text-align: center;
-  color: white;
-  border-radius: 0 0 30px 30px;
-  animation: fadeInDown 1s ease;
-}
-header h1 {
-  margin: 0;
-  font-size: clamp(28px, 6vw, 42px);
-  font-weight: bold;
-  text-transform: uppercase;
-}
-header p {
-  margin-top: 10px;
-  font-size: 18px;
-  opacity: 0.9;
-}
-
-.menu-container {
-  margin: 40px auto;
-  max-width: 850px;
-  background: #fff;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  text-align: center;
-  animation: fadeInUp 1s ease;
-}
-.menu-container img {
-  width: 100%;
-  border-radius: 14px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.menu-container img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
-
-.whatsapp-btn {
-  display: inline-block;
-  margin: 40px auto;
-  padding: 14px 26px;
-  background: #25D366;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 50px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
-  animation: fadeInUp 1.2s ease;
-}
-.whatsapp-btn:hover {
-  background: #1da851;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Botón flotante WhatsApp */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-  animation: fadeIn 1.5s ease;
-}
-.whatsapp-float img {
-  width: 34px;
-  height: 34px;
-}
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background-color: #1da851;
-}
-
-/* Botón volver arriba */
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #d4a373;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-.back-to-top:hover {
-  transform: scale(1.1);
-}
-.back-to-top.show {
-  display: flex;
-}
-
-footer {
-  background-color: #d4a373;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: white;
-  margin-top: 50px;
-  border-radius: 30px 30px 0 0;
-  animation: fadeInUp 1s ease;
-}
-footer iframe {
-  width: 100%;
-  height: 250px;
-  border: none;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-```
-
+    header {
+      background: linear-gradient(135deg, #4a90e2 0%, #50c9c3 100%);
+      padding: 40px 15px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 0 0 25px 25px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: clamp(28px, 8vw, 42px);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      word-wrap: break-word;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #f0f0f0;
+    }
+    .menu-container {
+      margin: 30px auto;
+      max-width: 900px;
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .menu-container img {
+      width: 100%;
+      border-radius: 12px;
+      border: 6px solid #4a90e2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .menu-container img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      margin: 40px auto;
+      padding: 16px 28px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background: linear-gradient(135deg, #20bd5a, #0e6c5d);
+      transform: scale(1.05);
+    }
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1da851;
+    }
+    /* Botón volver arriba */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-to-top.show {
+      display: flex;
+    }
+    footer {
+      background-color: #4a90e2;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: white;
+      margin-top: 40px;
+      border-radius: 25px 25px 0 0;
+    }
+    footer iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
@@ -178,17 +150,16 @@ footer iframe {
   </div>
 
   <!-- Botón flotante de WhatsApp -->
-
   <a href="https://wa.me/5492612636244?text=Hola!%20Quiero%20reservar%20una%20promo" class="whatsapp-float" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
   <!-- Botón volver arriba -->
-
-<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">⬆️</button>
+  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">⬆️</button>
 
   <footer>
     <p>© 2025 PhotoMarket - Todos los derechos reservados</p>
+    <!-- Mapa de Google Maps: ubicación corregida -->
     <iframe src="https://www.google.com/maps?q=-32.8995873,-68.8422524&z=17&output=embed" allowfullscreen="" loading="lazy"></iframe>
   </footer>
 
@@ -197,4 +168,11 @@ footer iframe {
     const backToTop = document.querySelector('.back-to-top');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 200) {
-        backToTo
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -4,282 +4,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PhotoMarket</title>
+  <title>Menú - PhotoMarket</title>
   <style>
-    /* --- Reset --- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* --- Estilos generales --- */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fdfaf6;
-      color: #4a3c32;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
       line-height: 1.6;
-      scroll-behavior: smooth;
+      letter-spacing: 0.3px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
+
+    @media (prefers-color-scheme: dark) {
+      body { background-color: #1e1e1e; color: #f0f0f0; }
+      .menu-container { background-color: #2a2a2a; box-shadow: 0 6px 16px rgba(255,255,255,0.1); }
+      footer { background-color: #333; }
+    }
+
+    header {
+      background: linear-gradient(135deg, #4a90e2 0%, #50c9c3 100%);
+      padding: 40px 15px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 0 0 25px 25px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(28px, 8vw, 42px);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    header p { margin-top: 10px; font-size: 16px; color: #f0f0f0; }
 
     /* --- Navbar --- */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      position: fixed; top: 0; left: 0; width: 100%;
       background: #f5e2d8;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 12px 20px;
+      display: flex; justify-content: space-between; align-items: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       z-index: 1000;
     }
 
-    nav h1 {
-      font-size: 22px;
-      color: #8b5e3c;
-      font-weight: bold;
+    nav h2 { margin: 0; font-size: 20px; color: #4a3c32; }
+
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { text-decoration: none; color: #4a3c32; font-weight: bold; }
+
+    /* --- Botón hamburguesa --- */
+    .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { width: 25px; height: 3px; background: #4a3c32; border-radius: 3px; }
+
+    /* --- Overlay oscuro --- */
+    .overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 900;
+    }
+    .overlay.active { opacity: 1; visibility: visible; }
+
+    /* --- Responsive con animación --- */
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed; top: 0; right: 0; height: 100vh; width: 220px;
+        background: #f5e2d8;
+        flex-direction: column; align-items: start;
+        padding: 80px 20px; gap: 20px;
+        transform: translateX(100%); transition: transform 0.4s ease-in-out;
+        z-index: 1001;
+      }
+      nav ul.active { transform: translateX(0); }
+      .menu-toggle { display: flex; }
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #4a3c32;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #c97b63;
-    }
-
-    /* --- Sections --- */
-    section {
-      padding: 100px 20px;
-      max-width: 1000px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #8b5e3c;
-    }
-
-    p {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 20px;
-    }
-
-    /* --- Hero --- */
-    .hero {
-      background: linear-gradient(135deg, #f5e2d8, #f9f3ee);
-      padding: 140px 20px 100px;
-      text-align: center;
-      border-radius: 0 0 30px 30px;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      color: #8b5e3c;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #5a463a;
-    }
-
-    /* --- Menú Cafetería --- */
-    .menu-container img {
-      width: 100%;
+    .menu-container {
+      margin: 30px auto; max-width: 900px;
+      background: white; padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
-
-    .menu-container img:hover {
-      transform: scale(1.02);
-    }
-
-    .whatsapp-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 26px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: transform 0.3s ease;
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.05);
-    }
-
-    /* --- FotoCarnet --- */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .feature {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       text-align: center;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .menu-container img {
+      width: 100%; border-radius: 12px;
+      border: 6px solid #4a90e2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .menu-container img:hover { transform: scale(1.02); box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+
+    .whatsapp-float {
+      position: fixed; width: 60px; height: 60px;
+      bottom: 20px; right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 100; display: flex; align-items: center; justify-content: center;
       transition: transform 0.3s ease;
     }
+    .whatsapp-float img { width: 35px; height: 35px; }
+    .whatsapp-float:hover { transform: scale(1.1); background-color: #1da851; }
 
-    .feature:hover {
-      transform: translateY(-5px);
+    .back-to-top {
+      position: fixed; bottom: 20px; left: 20px;
+      background-color: #4a90e2; color: white;
+      border: none; border-radius: 50%; width: 50px; height: 50px;
+      font-size: 20px; cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: none; align-items: center; justify-content: center;
+    }
+    .back-to-top.show { display: flex; }
+
+    @media (max-width: 480px) {
+      .whatsapp-float, .back-to-top { display: none !important; }
     }
 
-    /* --- Contacto --- */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 500px;
-      margin: auto;
-    }
-
-    input, textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 14px;
-      background-color: #c97b63;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #a35d49;
-    }
-
-    iframe {
-      width: 100%;
-      height: 250px;
-      border: none;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-
-    /* --- Footer --- */
     footer {
-      background-color: #8b5e3c;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      border-radius: 30px 30px 0 0;
-      margin-top: 40px;
+      background-color: #4a90e2;
+      text-align: center; padding: 20px;
+      font-size: 14px; color: white;
+      margin-top: 40px; border-radius: 25px 25px 0 0;
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
   <nav>
-    <h1>PhotoMarket</h1>
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
+    <h2>PhotoMarket</h2>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
       <li><a href="#cafeteria">Cafetería</a></li>
       <li><a href="#fotocarnet">FotoCarnet</a></li>
-      <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 
-  <!-- Hero -->
-  <section id="inicio" class="hero">
-    <h1>Bienvenidos a PhotoMarket</h1>
-    <p>Tu espacio de Cafetería ☕ y FotoCarnet en un mismo lugar.</p>
-  </section>
+  <header>
+    <h1>Bienvenido a PhotoMarket</h1>
+    <p>Cafetería y FotoCarnet en un solo lugar</p>
+  </header>
 
-  <!-- Cafetería -->
-  <section id="cafeteria">
-    <h2>☕ Nuestra Cafetería</h2>
-    <p>Disfruta de nuestra carta de cafés y delicias en un ambiente cálido.</p>
-    <div class="menu-container">
-      <img src="menu.jpg" alt="Menú Cafetería" loading="lazy">
-    </div>
-    <div style="text-align:center;">
-      <a class="whatsapp-btn" href="https://wa.me/5492612636244?text=Hola!%20Quiero%20reservar%20una%20promo" target="_blank">📲 Reservar por WhatsApp</a>
-    </div>
-  </section>
+  <div class="menu-container" id="cafeteria">
+    <h2>Menú de la Cafetería</h2>
+    <img src="menu.jpg" alt="Menú de la cafetería">
+  </div>
 
-  <!-- FotoCarnet -->
-  <section id="fotocarnet">
-    <h2> Servicio de FotoCarnet</h2>
+  <div class="menu-container" id="fotocarnet">
+    <h2>Servicio de FotoCarnet</h2>
     <p>Fotos carnet rápidas, impresas al instante y con fondo homologado.</p>
-    <div class="features">
-      <div class="feature">
-        <h3> Rápidas</h3>
-        <p>Fotos listas en minutos, sin demoras.</p>
-      </div>
-      <div class="feature">
-        <h3> Homologadas</h3>
-        <p>Cumplen con los estándares oficiales.</p>
-      </div>
-      <div class="feature">
-        <h3> Calidad</h3>
-        <p>Impresión nítida en papel fotográfico.</p>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:20px;">
-      <a class="whatsapp-btn" href="https://wa.me/5492612636244?text=Hola!%20Quiero%20hacer%20una%20foto%20carnet" target="_blank">📲 Consultar por WhatsApp</a>
-    </div>
-  </section>
+  </div>
 
-  <!-- Contacto -->
-  <section id="contacto">
-    
-    </form>
-    <iframe src="https://www.google.com/maps?q=-32.8995873,-68.8422524&z=17&output=embed" allowfullscreen="" loading="lazy"></iframe>
-  </section>
+  <a href="https://wa.me/XXXXXXXXXXX" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 
-  <!-- Footer -->
+  <button class="back-to-top" id="backToTop">↑</button>
+  <div class="overlay" id="overlay"></div>
+
   <footer>
-    <p>© 2025 PhotoMarket - Todos los derechos reservados</p>
+    <p>&copy; 2025 PhotoMarket - Todos los derechos reservados</p>
   </footer>
 
   <script>
-    // Animaciones al hacer scroll
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold: 0.2 });
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const overlay = document.getElementById('overlay');
+    const backToTop = document.getElementById('backToTop');
 
-    sections.forEach(sec => observer.observe(sec));
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
